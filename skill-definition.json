@@ -1,0 +1,27 @@
+{
+  "name": "POST_PROCESS PRONUNCIATION HELPER",
+  "summary": "Create a list of words to update in post process",
+  "description": "Create a list of words to update in post process",
+  "isPublic": false,
+  "status": "ACTIVE",
+  "serviceProvider": "SKILL_API",
+  "category": null,
+  "endpointInitialize": null,
+  "endpointSession": null,
+  "endpointExecute": "https://us-central1-pronunciation-post-proc-skill.cloudfunctions.net/smPronounce",
+  "endpointEndSession": null,
+  "endpointEndProject": null,
+  "endpointMatchIntent": null,
+  "languages": null,
+  "config": {
+    "skillType": "POST_PROCESS",
+    "configMeta": [
+      {
+        "name": "pronounceList",
+        "type": "TEXT",
+        "label": "List of pronunciation updates",
+        "required": true
+      }
+    ]
+  }
+}
