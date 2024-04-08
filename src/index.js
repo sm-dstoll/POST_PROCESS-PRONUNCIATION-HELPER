@@ -26,7 +26,7 @@ function buildResponse(text, memory) {
   }
 }
 
-functions.http('smPronounce', async (request, response, next) => {
+functions.http('smTextReplace', async (request, response, next) => {
     const executeRequest = request.body;
     const executeResponse = await executeHandler(executeRequest);
     response.setHeader('Content-Type', 'application/json');
