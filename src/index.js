@@ -52,5 +52,5 @@ app.post('/', async (request, response, next) => {
 // });
 
 app.get('/', (req, res) => {
-  res.send('asdfasdfasdfas')
+  res.send('get route working')
 })
