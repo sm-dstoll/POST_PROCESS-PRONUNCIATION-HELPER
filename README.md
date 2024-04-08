@@ -1,6 +1,6 @@
 # Pronunciation Skill
 
-[GCP Function: https://us-central1-pronunciation-post-proc-skill.cloudfunctions.net/smPronounce](https://console.cloud.google.com/functions/details/us-central1/smPronounce?env=gen2&project=pronunciation-post-proc-skill)
+[GCP Function: https://us-central1-text-replacement-skill.cloudfunctions.net/smTextReplace](https://console.cloud.google.com/functions/details/us-central1/smTextReplace?env=gen2&project=text-replacement-skill)
 
 ## Description
 
