@@ -1,14 +1,13 @@
 {
-  "name": "POST_PROCESS PRONUNCIATION HELPER",
+  "name": "Text Replacement Skill",
   "summary": "Create a list of words to update in post process",
   "description": "Create a list of words to update in post process",
-  "isPublic": false,
   "status": "ACTIVE",
   "serviceProvider": "SKILL_API",
   "category": null,
   "endpointInitialize": null,
   "endpointSession": null,
-  "endpointExecute": "https://us-central1-pronunciation-post-proc-skill.cloudfunctions.net/smPronounce",
+  "endpointExecute": "https://70c5-71-212-3-20.ngrok-free.app",
   "endpointEndSession": null,
   "endpointEndProject": null,
   "endpointMatchIntent": null,
@@ -17,9 +16,9 @@
     "skillType": "POST_PROCESS",
     "configMeta": [
       {
-        "name": "pronounceList",
-        "type": "TEXT",
-        "label": "List of pronunciation updates",
+        "name": "replacementList",
+        "type": "TEXT_AREA",
+        "label": "List of updates",
         "required": true
       }
     ]
