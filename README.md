@@ -1,6 +1,6 @@
 # Pronunciation Skill
 
-[GCP Function: https://us-central1-pronunciation-post-proc-skill.cloudfunctions.net/smPronounce](https://console.cloud.google.com/functions/details/us-central1/smPronounce?env=gen2&project=pronunciation-post-proc-skill)
+[GCP Function: https://us-central1-text-replacement-skill.cloudfunctions.net/smTextReplace](https://console.cloud.google.com/functions/details/us-central1/smTextReplace?env=gen2&project=text-replacement-skill)
 
 ## Description
 
@@ -9,7 +9,7 @@ The Pronunciation Skill can be included with any DDNA Studio project as a post-p
 ## Sample Skill Definition
 ```json
 {
-  "name": "POST_PROCESS PRONUNCIATION HELPER",
+  "name": "Text Replacement Skill",
   "summary": "Create a list of words to update in post process",
   "description": "Create a list of words to update in post process",
   "isPublic": false,
@@ -18,7 +18,7 @@ The Pronunciation Skill can be included with any DDNA Studio project as a post-p
   "category": null,
   "endpointInitialize": null,
   "endpointSession": null,
-  "endpointExecute": "https://us-central1-pronunciation-post-proc-skill.cloudfunctions.net/smPronounce",
+  "endpointExecute": "https://us-central1-text-replacement-skill.cloudfunctions.net/smTextReplace",
   "endpointEndSession": null,
   "endpointEndProject": null,
   "endpointMatchIntent": null,
@@ -27,9 +27,9 @@ The Pronunciation Skill can be included with any DDNA Studio project as a post-p
     "skillType": "POST_PROCESS",
     "configMeta": [
       {
-        "name": "pronounceList",
+        "name": "replacementList",
         "type": "TEXT",
-        "label": "List of pronunciation updates",
+        "label": "List of text replacement updates",
         "required": true
       }
     ]
@@ -37,9 +37,9 @@ The Pronunciation Skill can be included with any DDNA Studio project as a post-p
 }
 ```
 
-The skill definition creates an `pronounceList` input that allows you to paste a string of phrases and their replacements in the conversation. Phrase/Replacement pairs are delimited by a colon (`:`), while the individual words to replace are delimited by a dash (`-`).
+The skill definition creates an `replacementList` input that allows you to paste a string of phrases and their replacements in the conversation. Phrase/Replacement pairs can be entered into the text area field and are delimited by a new line (`\n`), while the individual words to replace are delimited by a dash (`-`).
 
-ex: `Sentence : string - Stoll : @pronounce(Stoll, Stall)`
+ex: `Sentence - string\nStoll - @pronounce(Stoll, Stall)`
 
 ![](./images/skill-connect.png)
 
@@ -53,9 +53,9 @@ ex: `Sentence : string - Stoll : @pronounce(Stoll, Stall)`
     "name": "MY_INTENT",
     "confidence": 0
   },
-  "text": "This is a sentence to demonstrate the post process pronunciation skill, developed by David Stoll at Soul Machines.",
+  "text": "This is a sentence to demonstrate the text replacement skill, developed by David Stoll at Soul Machines.",
   "config": {
-    "pronounceList": "Sentence : string - Stoll : @pronounce(Stoll, Stall)"
+    "pronounceList": "Sentence - string\nStoll - @pronounce(Stoll, Stall)"
   }
 }
 ```
@@ -63,7 +63,7 @@ ex: `Sentence : string - Stoll : @pronounce(Stoll, Stall)`
 ```json
 {
     "output": {
-        "text": "This is a string to demonstrate the post process pronunciation skill, developed by David @pronounce(Stoll, Stall) at Soul Machines.",
+        "text": "This is a string to demonstrate the text replacement skill, developed by David @pronounce(Stoll, Stall) at Soul Machines.",
         "variables": {}
     },
     "endConversation": false,

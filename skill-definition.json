@@ -1,5 +1,5 @@
 {
-  "name": "POST_PROCESS PRONUNCIATION HELPER",
+  "name": "Text Replacement Skill",
   "summary": "Create a list of words to update in post process",
   "description": "Create a list of words to update in post process",
   "isPublic": false,
@@ -8,7 +8,7 @@
   "category": null,
   "endpointInitialize": null,
   "endpointSession": null,
-  "endpointExecute": "https://us-central1-pronunciation-post-proc-skill.cloudfunctions.net/smPronounce",
+  "endpointExecute": "https://us-central1-text-replacement-skill.cloudfunctions.net/smTextReplace",
   "endpointEndSession": null,
   "endpointEndProject": null,
   "endpointMatchIntent": null,
@@ -17,9 +17,9 @@
     "skillType": "POST_PROCESS",
     "configMeta": [
       {
-        "name": "pronounceList",
+        "name": "replacementList",
         "type": "TEXT",
-        "label": "List of pronunciation updates",
+        "label": "List of text replacement updates",
         "required": true
       }
     ]
