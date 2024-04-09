@@ -9,10 +9,9 @@ The Pronunciation Skill can be included with any DDNA Studio project as a post-p
 ## Sample Skill Definition
 ```json
 {
-  "name": "Text Replacement Skill",
+  "name": "Correct Pronunciation",
   "summary": "Create a list of words to update in post process",
-  "description": "Create a list of words to update in post process",
-  "isPublic": false,
+  "description": "You may use the Correct Pronunciation to speak words, phrases, or characters in a specific way while displaying different text in the User Interface to the user. As you begin to test and interact with your Digital Person, you may notice parts of the spoken dialog could benefit from pauses, emphasis etc.",
   "status": "ACTIVE",
   "serviceProvider": "SKILL_API",
   "category": null,
@@ -29,7 +28,7 @@ The Pronunciation Skill can be included with any DDNA Studio project as a post-p
       {
         "name": "replacementList",
         "type": "TEXT",
-        "label": "List of text replacement updates",
+        "label": "List of comma separated updates",
         "required": true
       }
     ]
@@ -37,7 +36,7 @@ The Pronunciation Skill can be included with any DDNA Studio project as a post-p
 }
 ```
 
-The skill definition creates an `replacementList` input that allows you to paste a string of phrases and their replacements in the conversation. Phrase/Replacement pairs can be entered into the text area field and are delimited by a new line (`\n`), while the individual words to replace are delimited by a dash (`-`).
+The skill definition creates an `replacementList` input that allows you to paste a string of phrases and their pronunciations in the conversation. Phrase/Replacement pairs can be entered into the text area field and are delimited by a new line (`\n`), while the individual words to replace are delimited by a comma and space (`, `).
 
 ex: `Sentence - string\nStoll - @pronounce(Stoll, Stall)`
 
@@ -55,7 +54,7 @@ ex: `Sentence - string\nStoll - @pronounce(Stoll, Stall)`
   },
   "text": "This is a sentence to demonstrate the text replacement skill, developed by David Stoll at Soul Machines.",
   "config": {
-    "pronounceList": "Sentence - string\nStoll - @pronounce(Stoll, Stall)"
+    "pronounceList": "Sentence, string\nStoll, Stall"
   }
 }
 ```
@@ -63,7 +62,7 @@ ex: `Sentence - string\nStoll - @pronounce(Stoll, Stall)`
 ```json
 {
     "output": {
-        "text": "This is a string to demonstrate the text replacement skill, developed by David @pronounce(Stoll, Stall) at Soul Machines.",
+        "text": "This is a @pronounce(sentence, string) to demonstrate the text replacement skill, developed by David @pronounce(Stoll, Stall) at Soul Machines.",
         "variables": {}
     },
     "endConversation": false,

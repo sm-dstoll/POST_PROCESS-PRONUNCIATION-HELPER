@@ -1,7 +1,7 @@
 {
-  "name": "Text Replacement Skill",
+  "name": "Correct Pronunciation",
   "summary": "Create a list of words to update in post process",
-  "description": "Create a list of words to update in post process",
+  "description": "You may use the Correct Pronunciation to speak words, phrases, or characters in a specific way while displaying different text in the User Interface to the user. As you begin to test and interact with your Digital Person, you may notice parts of the spoken dialog could benefit from pauses, emphasis etc.",
   "isPublic": false,
   "status": "ACTIVE",
   "serviceProvider": "SKILL_API",
@@ -19,7 +19,7 @@
       {
         "name": "replacementList",
         "type": "TEXT",
-        "label": "List of text replacement updates",
+        "label": "List of comma separated updates",
         "required": true
       }
     ]

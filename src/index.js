@@ -2,15 +2,14 @@ const functions = require('@google-cloud/functions-framework');
 
 async function executeHandler(req) {
   console.log('EXECUTE HANDLER');
-  console.log({ req });
   const { text, memory, config } = req;
   if (!config || !config.replacementList) return buildResponse(text, memory);
   const replacementList = config.replacementList.split('\n');
   let newText = text;
   replacementList.forEach((phrase) => {
-    const [pre, post] = phrase.split(' - ');
+    const [pre, post] = phrase.split(', ');
     const regex = new RegExp(`\\b${pre}\\b`, "ig");
-    newText = newText.replaceAll(regex, post);
+    newText = newText.replaceAll(regex, `@pronounce(${pre}, ${post}`);
   })
   return buildResponse(newText, memory)
 }
